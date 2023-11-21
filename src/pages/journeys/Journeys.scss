@@ -1,3 +1,26 @@
+$GREEN: rgb(100, 209, 78);
+$WHITE: rgb(236, 242, 247);
+$RED: rgb(248, 10, 10);
+$BLUE: rgb(110, 110, 217);
+$ORANGE: rgb(248, 164, 8);
+$BLACK: #0a0a0a;
+
+@mixin statusStyle($color) {
+  font-weight: bold;
+  color: $color;
+}
+
+@mixin buttonStyle($color, $width) {
+  background-color: $color;
+  border-radius: 4px;
+  color: $WHITE;
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  width: $width;
+  height: 40px;
+}
+
 .content {
   height: 100%;
   display: flex;
@@ -11,3 +34,72 @@
     color: #3c4b64;
   }
 }
+
+.table-container {
+  display: block;
+  margin: 2em auto;
+  width: 100%;
+}
+
+.flex-table {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flex-header {
+  background-color: $GREEN;
+  color: $WHITE;
+  font-weight: bolder;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.flex-row {
+  width: calc(100% / 8);
+  text-align: left;
+  padding: 20px;
+}
+
+.cell {
+  font-size: 13px;
+}
+
+.traveller_name {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.remove-btn > button {
+  cursor: pointer;
+  @include buttonStyle($RED, 136px)
+}
+
+.complete-btn > button {
+  cursor: pointer;
+  @include buttonStyle($GREEN, 136px)
+}
+
+.done-btn > button {
+  @include buttonStyle($BLUE, 136px)
+}
+
+.pending-status {
+  @include statusStyle($ORANGE)
+}
+
+.cancelled-status {
+  @include statusStyle($RED)
+}
+
+.completed-status {
+  @include statusStyle($GREEN)
+}
+

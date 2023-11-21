@@ -1,0 +1,30 @@
+@import "../Journeys.scss";
+
+.filter-panel {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .filter-label {
+    color: #3c4b64;
+  }
+
+  .filter-form {
+    margin: 10px;
+
+    .filter-elements {
+      padding: 7px;
+      margin-left: 10px;
+      height: 40px;
+      border-radius: 3px;
+    }
+
+    .filter-btn {
+      @include buttonStyle($GREEN, 125px);
+      cursor: pointer;
+    }
+  }
+
+}
+
